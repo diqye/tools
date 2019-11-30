@@ -5,17 +5,18 @@ function start(){
         new Notification('第七页的B站直播',{body:'开始弹幕采集和提示'})
         collection(document.querySelector('#chat-history-list'),notice=>{
             new Notification(notice.title,notice)
+            say(notice.title + '说' + notice.body)
         })
     }
     // 3秒收集一次
     // 对比最近20条弹幕，差异作为提示
     function collection(root,callback){
             console.log('collection', lastNotices)
-        let chats = Array.prototype.slice.call(root.querySelectorAll('.chat-item')).slice(-20);
+        let chats = Array.prototype.slice.call(root.querySelectorAll('.chat-item.danmaku-item')).slice(-20);
         let notices = chats.map(a=>a.textContent)
                            .map(a=>a.split('\n').pop())
                            .map(a=>a.split(':'))
-                           .map(([a,b])=>({title:a,body:b}))
+                           .map(([a,b])=>({title:a,body:b,tag:b}))
        if(lastNotices.length==0){
            lastNotices = notices
            setTimeout(()=>collection(root,callback),3000)
@@ -35,5 +36,9 @@ function start(){
        
      }
     
+}
+function say(str){
+    let image = new Image()
+        image.src = 'http://localhost:7766/' + str
 }
 start()
