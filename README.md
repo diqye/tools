@@ -3,4 +3,4 @@
 
 ## 目录
 
-- [BiliBili直播](./bilibili/README.md)
+- [BiliBili直播](./bilibilbi)
