@@ -1,13 +1,13 @@
 
 ## live-notice.js
 
-检测新收到弹幕做全局提示,在直播过程中无需关注直播页面也可以看到动态
+在B站直播中新弹幕脱离网页提升为系统提示。
 
 ![./asserts/notice.png](./asserts/notice.png)
 
 ## 如何使用
 
-* 进入直播页面 如: https://live.bilibili.com/21478095?visit_id=1xk0zikoxijk
-* 打开控制台(浏览器的开发者工具)
-* 复制 live-notice.js中的代码 在控制台中运行
-* 看到开始弹幕采集 代码Ok
+* 进入直播客户页面 如: https://live.bilibili.com/21478095?visit_id=1xk0zikoxijk
+* 打开控制台(开发者工具->控制台)
+* 复制live-notice.js 中的代码只控制台中
+* 看到“开始弹幕采集”提示即可
